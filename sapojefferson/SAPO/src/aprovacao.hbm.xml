@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.siscone.entity.Aprovacao" table="aprovacao">
+		<id name="codigo" column="APR_COD">
+			<generator class="increment"></generator>
+		</id>
+		<property name="total" column="APR_TOTAL" />
+		<property name="orcamento" column="APR_ORCAMENTO" />
+		<property name="acumulado" column="APR_ACUMULADO" />
+		<property name="diferenca" column="APR_DIFERENCA" />
+		<property name="indAprovado" column="APR_IND_APR" type="boolean" />
+		<many-to-one name="subLotacao" class="br.com.siscone.entity.SubLotacao"
+			column="SUB_LOT_COD" lazy="false" />
+		<many-to-one name="categoria" class="br.com.siscone.entity.Categoria"
+			column="CAT_COD" lazy="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,75 @@
+html{
+	font-size: 15px;	
+}
+
+body {
+	background-repeat: no-repeat;
+	background-position: 150px 0;
+}
+
+.rich-panel-header {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.rich-panel{
+	font-size: 15px;
+}
+.rich-messages-marker img {
+	padding-right: 7px;
+}
+
+.top {
+	vertical-align: top;
+}
+
+rich-message-label {
+	padding: 0px 10px;
+}
+
+.rich-messages-label {
+	padding: 0px 10px
+}
+
+.rich-message-marker {
+	
+}
+
+.rich-message {
+	
+}
+
+.errorLabel {
+	color: red;
+	font-size: 20px;
+}
+
+.infoLabel {
+	color: green;
+	font-size: 20px;
+}
+
+input[type="text"] {
+	text-transform: uppercase;
+}
+
+select {
+	text-transform: uppercase;
+}
+
+.rich-table-cell {
+	text-transform: uppercase;
+}
+
+.maiusculo {
+	text-transform: uppercase;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+.form {
+	font-weight: bold;
+	font-size: 20px;
+}

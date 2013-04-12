@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.siscone.entity.Usuario" table="usuario">
+		<id name="login" column="USU_LOGIN">
+		</id>
+		<property name="senha" column="USU_SENHA" />
+		<property name="indAdministrador" column="USU_IND_ADMIN" type="boolean"/>
+		<property name="indCadastrador" column="USU_IND_CAD" type="boolean"/>
+		<property name="indCadastradorSubLotacao" column="USU_IND_CAD_SUB_LOT" type="boolean"/>
+		<property name="indPriorizador" column="USU_IND_PRI" type="boolean"/>
+		<property name="indAprovador" column="USU_IND_APR_PRI" type="boolean"/>
+		<property name="indReplanejador" column="USU_IND_REPLAN" type="boolean"/>
+		<many-to-one name="subLotacao"
+			class="br.com.siscone.entity.SubLotacao" column="SUB_LOT_COD"
+			lazy="false" />
+	</class>
+</hibernate-mapping>

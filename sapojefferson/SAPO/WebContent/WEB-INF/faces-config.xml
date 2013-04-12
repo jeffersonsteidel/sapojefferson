@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces
+Config 1.1//EN"
+"http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+	<managed-bean>
+		<managed-bean-name>categoriaController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.CategoriaController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>cronogramaController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.CronogramaController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>elementoController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.ElementoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>lotacaoController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.LotacaoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>materialController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.MaterialController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>mensagemController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.MensagemController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>replanejamentoController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.ReplanejamentoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>subElementoController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.SubElementoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>subLotacaoController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.SubLotacaoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>sugestaoController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.SugestaoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>unidadeController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.UnidadeController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioController</managed-bean-name>
+		<managed-bean-class>br.com.siscone.controller.UsuarioController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+</faces-config>

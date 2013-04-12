@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SAPO2014</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>org.ajax4jsf.COMPRESS_SCRIPT</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.richfaces.SKIN</param-name>
+    <param-value>wine</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.richfaces.CONTROL_SKINNING</param-name>
+    <param-value>enable</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.richfaces.LoadStyleStrategy</param-name>
+    <param-value>all</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.richfaces.LoadScriptStrategy</param-name>
+    <param-value>all</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.ajax4jsf.xmlparser.ORDER</param-name>
+    <param-value>NEKO</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.ajax4jsf.xmlparser.NEKO</param-name>
+    <param-value> .* \ ..*</param-value>
+  </context-param>
+  <filter>
+    <display-name>RichFaces Filter</display-name>
+    <filter-name>richfaces</filter-name>
+    <filter-class>org.ajax4jsf.Filter</filter-class>
+    <init-param>
+      <param-name>createTempFiles</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceparser</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <init-param>
+      <param-name>maxRequestSize</param-name>
+      <param-value>990000000</param-value>
+    </init-param>
+    <init-param>
+      <param-name>enable-cache</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>richfaces</filter-name>
+    <servlet-name>Faces Servlet</servlet-name>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+  </filter-mapping>
+</web-app>

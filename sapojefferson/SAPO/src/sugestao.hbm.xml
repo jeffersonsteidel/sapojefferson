@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.siscone.entity.Sugestao" table="sugestao">
+		<id name="codigo" column="SUG_COD">
+			<generator class="increment"></generator>
+		</id>
+		<property name="data" column="SUG_DATA" />
+		<property name="sugestao" column="SUG_DESC" />
+		<property name="email" column="SUG_EMAIL" />
+		<property name="telefone" column="SUG_TELEFONE" />
+		<property name="lida" column="SUG_LIDA"  type="boolean"/>
+		<property name="arquivada" column="SUG_ARQUIVADA" type="boolean"/>
+		<many-to-one name="usuario" class="br.com.siscone.entity.Usuario"
+			column="USU_LOGIN" lazy="false" />
+	</class>
+</hibernate-mapping>

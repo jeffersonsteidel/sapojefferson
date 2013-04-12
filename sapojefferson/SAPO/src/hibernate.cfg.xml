@@ -1,0 +1,36 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://172.16.0.4:3306/sapo</property>
+		<property name="hibernate.connection.username">sapo</property>
+		<property name="hibernate.connection.password">s1st3m4S@p0</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="connection.pool_size">1</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.connection.autoReconnect">true</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="hibernate.connection.autoReconnectForPools">true</property>
+
+
+		<mapping resource="aprovacao.hbm.xml" />
+		<mapping resource="categoria.hbm.xml" />
+		<mapping resource="cronograma.hbm.xml" />
+		<mapping resource="elemento.hbm.xml" />
+		<mapping resource="lotacao.hbm.xml" />
+		<mapping resource="material.hbm.xml" />
+		<mapping resource="mensagem.hbm.xml" />
+		<mapping resource="replanejamento.hbm.xml" />
+		<mapping resource="subelemento.hbm.xml" />
+		<mapping resource="sublotacao.hbm.xml" />
+		<mapping resource="sugestao.hbm.xml" />
+		<mapping resource="unidade.hbm.xml" />
+		<mapping resource="usuario.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
