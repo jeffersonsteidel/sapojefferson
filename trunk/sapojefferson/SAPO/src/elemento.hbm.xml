@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.siscone.entity.Elemento" table="elemento">
+		<id name="codigo" column="ELE_COD">
+			<generator class="increment"></generator>
+		</id>
+		<property name="descricao" column="ELE_DESC" />
+		<many-to-one name="categoria" class="br.com.siscone.entity.Categoria"
+			column="CAT_COD" lazy="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.siscone.entity.Material" table="material">
+		<id name="codigo" column="MAT_COD">
+			<generator class="increment"></generator>
+		</id>
+		<property name="descricao" column="MAT_DESC" />
+		<property name="justificativa" column="MAT_JUSTIFICATIVA" />
+		<property name="quantidade" column="MAT_QTD" />
+		<property name="vlrUnitario" column="MAT_VLR_UNITARIO" />
+		<property name="vlrTotal" column="MAT_VLR_TOTAL" />
+		<property name="prioridade" column="MAT_PRIORIDADE" />
+		<property name="tipo" column="MAT_TIPO" />
+		<property name="execucao" column="MAT_EXECUCAO" />
+		<property name="projetoVinculado" column="MAT_PROJETO_VINCULADO" />
+		<property name="responsavelProjeto" column="MAT_RESPONSAVEL_PROJETO" />
+		<many-to-one name="subElemento" class="br.com.siscone.entity.SubElemento"
+			column="SUB_ELE_COD" lazy="false" />
+		<many-to-one name="subLotacao" class="br.com.siscone.entity.SubLotacao"
+			column="SUB_LOT_COD" lazy="false" />
+		<many-to-one name="Unidade" class="br.com.siscone.entity.Unidade"
+			column="UNI_COD" lazy="false" />
+	</class>
+</hibernate-mapping>
