@@ -150,7 +150,7 @@
 							<f:convertNumber type="currency" />
 						</h:outputText>
 
-						<h:outputText value="Projeto Vinculado: " />
+						<h:outputText value="Nome do Projeto: " />
 						<h:inputText
 							value="#{materialController.material.projetoVinculado}" size="90"
 							maxlength="200" />
