@@ -43,14 +43,26 @@
 							reRender="form"></a4j:support>
 					</h:selectOneMenu>
 
-
+					<h:outputText value="Sub Lotação: "
+						rendered="#{materialController.material.subLotacao.lotacao.codigo != null}" />
+					<h:selectOneMenu
+						value="#{materialController.material.subLotacao.codigo}"
+						id="sublotacoes"
+						disabled="#{!(usuarioController.usuarioAutenticado.indAdministrador || usuarioController.usuarioAutenticado.indCadastrador)}"
+						rendered="#{materialController.material.subLotacao.lotacao.codigo != null}">
+						<f:selectItem itemLabel="SELECIONE" itemValue="" />
+						<f:selectItems value="#{materialController.subLotacoes}" />
+						<a4j:support event="onchange"
+							action="#{materialController.pesquisar}" ajaxSingle="true"
+							reRender="form"></a4j:support>
+					</h:selectOneMenu>
 
 					<a4j:region>
 						<rich:dataTable id="listarMateriais"
 							value="#{materialController.materialList}" var="list"
 							columnClasses="center" rows="20" reRender="ds"
 							rendered="#{not empty materialController.materialList}">
-							
+
 							<rich:column width="200px" sortBy="#{list.subElemento.descricao}">
 								<f:facet name="header">
 									<h:outputText value="Sub Lotação" />

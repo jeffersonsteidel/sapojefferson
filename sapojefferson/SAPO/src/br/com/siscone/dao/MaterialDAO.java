@@ -28,17 +28,42 @@ public class MaterialDAO extends DAO {
 	@SuppressWarnings("unchecked")
 	public List<Material> listByFilter(Material material) {
 		HibernateUtility.getSession().clear();
+		String sql = "from Material m where m.subLotacao.lotacao.codigo = "
+				+ material.getSubLotacao().getLotacao().getCodigo();
+		sql += " and m.subElemento.elemento.categoria.codigo  = "
+				+ material.getSubElemento().getElemento().getCategoria()
+						.getCodigo();
+		if (material.getSubLotacao().getCodigo() != null && material.getSubLotacao().getCodigo() !=0) {
+			sql += " and m.subLotacao.codigo = "
+					+ material.getSubLotacao().getCodigo();
+			;
+		}
+		sql += " order by m.prioridade";
 		Query query = HibernateUtility
 				.getSession()
-				.createQuery(
-						"from Material m where m.subLotacao.lotacao.codigo = :codigoLotacao and m.subElemento.elemento.categoria.codigo  = :codigoCategoria   order by m.prioridade");
-		query.setParameter("codigoLotacao", material.getSubLotacao()
-				.getLotacao().getCodigo());
-		query.setParameter("codigoCategoria", material.getSubElemento()
-				.getElemento().getCategoria().getCodigo());
+				.createQuery(sql);
 		HibernateUtility.commitTransaction();
 		return (List<Material>) query.list();
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<Material> listByLotacao(Material material) {
+		HibernateUtility.getSession().clear();
+		String sql = "from Material m where m.subLotacao.lotacao.codigo = "
+				+ material.getSubLotacao().getLotacao().getCodigo();
+		sql += " and m.subElemento.elemento.categoria.codigo  = "
+				+ material.getSubElemento().getElemento().getCategoria()
+						.getCodigo();
+		sql += " order by m.prioridade";
+		Query query = HibernateUtility
+				.getSession()
+				.createQuery(sql);
+		HibernateUtility.commitTransaction();
+		return (List<Material>) query.list();
+	}
+
+	
 
 	@SuppressWarnings("unchecked")
 	public List<Material> listByFilterSubLotacao(Material material) {

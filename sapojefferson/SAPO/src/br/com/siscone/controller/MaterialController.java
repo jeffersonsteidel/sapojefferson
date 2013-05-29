@@ -418,6 +418,7 @@ public class MaterialController {
 				.getLotacao()
 				.setCodigo(
 						usuarioLogado.getSubLotacao().getLotacao().getCodigo());
+		listarSubLotacoes();
 		if (!usuarioLogado.getIndAdministrador()
 				|| !usuarioLogado.getIndCadastrador()) {
 			material.getSubLotacao().setCodigo(
@@ -430,6 +431,10 @@ public class MaterialController {
 	}
 
 	public List<Material> pesquisar() {
+		if (material.getSubLotacao().getLotacao() != null && material.getSubLotacao().getLotacao().getCodigo() != null){
+			listarSubLotacoes();
+		}
+				
 		if (material.getSubLotacao().getLotacao() != null
 				&& material.getSubElemento().getElemento().getCategoria()
 						.getCodigo() != null
@@ -444,9 +449,15 @@ public class MaterialController {
 					|| usuarioLogado.getIndCadastrador()) {
 				materialList = (ArrayList<Material>) MaterialDAO.getInstance()
 						.listByFilter(material);
-			} else {
+			}
+			else {
 				materialList = (ArrayList<Material>) MaterialDAO.getInstance()
 						.listByFilterSubLotacao(material);
+			}
+			if(usuarioLogado.getIndPriorizador()){
+				materialList.clear();
+				materialList = (ArrayList<Material>) MaterialDAO.getInstance()
+						.listByLotacao(material);
 			}
 			for (Material item : materialList) {
 				total = total.add(item.getVlrTotal());
